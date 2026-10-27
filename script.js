@@ -1774,6 +1774,7 @@ function createCharacterCard(athlete) {
     <div class="character-card-content">
       <h3 class="character-card-name">
         ${escapeHtml(athlete.name)}
+        <span class="original-name" lang="en">${escapeHtml(athlete.originalName)}</span>
       </h3>
 
       <div class="character-card-power">
@@ -2047,8 +2048,8 @@ function renderProfile(athlete) {
   profileImage.alt =
     athlete.name;
 
-  profileName.textContent =
-    athlete.name;
+  profileName.innerHTML =
+    `${escapeHtml(athlete.name)}<span class="original-name" lang="en">${escapeHtml(athlete.originalName)}</span>`;
 
   profileAbilityName.textContent =
     athlete.power;
